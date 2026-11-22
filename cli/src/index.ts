@@ -5,6 +5,7 @@ import { readFileSync } from "node:fs";
 import { main } from "./main.ts";
 import { openUrl } from "./open.ts";
 import { systemTz } from "./time.ts";
+import { colorLevel, paint, spinner } from "./style.ts";
 
 const version = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version as string;
 process.exitCode = await main(process.argv.slice(2), {
@@ -15,4 +16,7 @@ process.exitCode = await main(process.argv.slice(2), {
   out: (l) => console.log(l),
   err: (l) => console.error(l),
   version,
+  paint: paint(colorLevel(process.stdout, process.env)),
+  paintErr: paint(colorLevel(process.stderr, process.env)),
+  spin: (t) => spinner(process.stdout, t, paint(colorLevel(process.stdout, process.env)).brand),
 });

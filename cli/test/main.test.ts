@@ -35,6 +35,36 @@ test("REQ-CLI-001/002 정상: URL 출력 + 브라우저 오픈 + exit 0", async 
   assert.ok(out.some((l) => l.includes("2026-08-17 세션 1개 · 프롬프트 1개")));
 });
 
+test("TC-CLI-001-21 출력 서식(평문 단계): ✔ 결과 줄 · 빈 줄 4구간 · URL 줄 원형 · 스피너 대신 진행 문구", async () => {
+  const home = await fakeHome(true, [user("2026-08-17T10:00:00+09:00", "안녕"), assistant("2026-08-17T10:01:00+09:00", "m1", { text: "답", usage: { input_tokens: 5, output_tokens: 1 } })]);
+  const { d, out } = deps(home, openOk);
+  assert.equal(await main([], d), 0);
+  const url = out.find((l) => l.includes("scored.kr/report"))!;
+  assert.deepEqual(out.map((l) => (l === url ? "<URL>" : l.slice(0, 12))), [
+    "세션 기록을 찾는 중…",
+    "✔ 2026-08-17",
+    "",
+    "<URL>",
+    "브라우저에서 성적표를 ",
+    "",
+    "대화 리포트를 만드는 ",
+    "✔ 오늘 대화 전체는 ",
+    "",
+    "내일 또 뽑아보세요 —",
+  ]);
+  assert.ok(url.startsWith("https://"), "URL 줄은 앞에 아무것도 없어야 함");
+  assert.ok(!out.join("").includes("\x1b"), "평문 단계에 제어 문자 금지");
+});
+
+test("TC-CLI-001-21 오류 기호: 치명 ✖ / 경고 ⚠", async () => {
+  const a = deps(await fakeHome(false), openOk);
+  await main([], a.d);
+  assert.ok(a.err.at(-1)?.startsWith("✖ "));
+  const b = deps(await fakeHome(true, [user("2026-08-17T10:00:00+09:00", "안녕")]), async () => { throw new Error("x"); });
+  await main([], b.d);
+  assert.ok(b.err[0]?.startsWith("⚠ "));
+});
+
 test("TC-CLI-001-09: ~/.claude/projects 미존재 → ERR-CLI-001, exit 1", async () => {
   const { d, err } = deps(await fakeHome(false), openOk);
   assert.equal(await main([], d), 1);
