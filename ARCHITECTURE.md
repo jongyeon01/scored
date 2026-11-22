@@ -10,7 +10,7 @@
   - `src/instrumentation.ts`(서버·엣지 오류 수집) · `src/instrumentation-client.ts`(클라이언트, 하이드레이션 전) — 둘 다 `NEXT_PUBLIC_SENTRY_DSN` 없으면 무동작
   - `src/lib/` — `payload`(해시 인코딩·디코딩) · `judge`(BR-009/010 판정 — GRADE_ORDER SSOT) · `reveal`(연출 타임라인) · `dashboard`·`rows`·`format` · `og`(쿼리 서버 검증) · `scrub`(BR-004 URL 위생 — 의존 0, 주소창·오류수집 공용) · `share`·`analytics`·`sample`·`utils` + `*.test.mts`
   - `cli/` — 독립 npm 패키지 `scored` (의존성 0, `node:test`, TS erasable → `tsc` → `dist/`)
-    - `src/types.ts` 05 페이로드 타입(웹과 공유) · `analyze.ts` 집계(§2·§3·§4)+세션 판정 · `report.ts` 로컬 대화 리포트(REQ-CLI-003) · `time.ts` 05:00 경계·타임존 · `files.ts` JSONL 스트리밍 · `encode.ts` 06 인코딩·URL · `open.ts` 브라우저 · `copy.ts` CPY 문구 · `main.ts` 흐름(DI) · `index.ts` bin
+    - `src/types.ts` 05 페이로드 타입(웹과 공유) · `analyze.ts` 집계(§2·§3·§4)+세션 판정 · `report.ts` 로컬 대화 리포트(REQ-CLI-003) · `time.ts` 05:00 경계·타임존 · `files.ts` JSONL 스트리밍 · `encode.ts` 06 인코딩·URL · `open.ts` 브라우저 · `copy.ts` CPY 문구 · `style.ts` 터미널 서식(ANSI 직접·TTY 게이트·스피너) · `main.ts` 흐름(DI) · `index.ts` bin
     - 세션 = 파일이 아니다: 재개 시 `.jsonl`이 통째 복제되므로 프롬프트 `uuid` 중복 제거 + 부분집합 파일 제외(`liveSessions`) — `analyze.ts`가 SSOT, `report.ts`가 재사용
     - 로그를 두 번 읽는다(집계 1회 + 리포트 1회, 실측 각 2.4s). 대상일이 집계 후에야 정해지므로 — 느려지면 대상일 파일만 추려 2회차에 전달
     - `test/*.test.ts` — CLI-001 §9 TC 1:1
