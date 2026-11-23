@@ -47,4 +47,4 @@ Node.js 18 이상. macOS · Linux · Windows.
 
 ## 라이선스
 
-MIT — `cli/` 디렉터리(이 npm 패키지)에 한합니다. 저장소의 웹 애플리케이션은 별도 라이선스를 따릅니다: https://github.com/kjjyyy01/scored
+MIT — `cli/` 디렉터리(이 npm 패키지)에 한합니다. 저장소의 웹 애플리케이션은 별도 라이선스를 따릅니다: https://github.com/jongyeon01/scored
