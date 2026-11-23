@@ -17,7 +17,7 @@
 
 ### Issue tracker
 
-GitHub Issues (`gh` CLI). See `docs/agents/issue-tracker.md`.
+GitHub Issues (`gh` CLI, 저장소 `jongyeon01/scored`). See `docs/agents/issue-tracker.md` (로컬 전용 — `docs/`는 미추적).
 
 ### Domain docs
 
