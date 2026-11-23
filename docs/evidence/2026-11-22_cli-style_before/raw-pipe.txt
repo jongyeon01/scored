@@ -1,6 +1,0 @@
-세션 기록을 찾는 중… (~/.claude/projects)
-2026-11-22 세션 5개 · 프롬프트 14개 분석 완료 — 서버로 보내는 데이터는 없어요
-https://scored.kr/report?from=cli#<payload 제거>
-브라우저에서 성적표를 열고 있어요. 안 열리면 위 링크를 복사하세요
-오늘 대화 전체는 ~/.scored/2026-11-22.html 에 저장했어요 (최근 7일치만 보관해요)
-내일 또 뽑아보세요 — alias sc="npx @jong-yeon/scored"
