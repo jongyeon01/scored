@@ -39,12 +39,12 @@ export default function Home() {
             </Badge>
           </Link>
 
-          {/* EL-LAND-001 — CPY-LAND-001 */}
+          {/* EL-LAND-001 — CPY-LAND-001 · CPY-LAND-006 */}
           <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-            터미널 한 줄이면, 내 AI 코딩 성적표가 나온다
+            흩어진 AI 코딩 기록을, 한눈에.
           </h1>
           <p className="text-base leading-7 text-muted-foreground">
-            Claude Code가 남긴 오늘 하루의 세션 기록을 읽어 스탯 카드로 만듭니다. 설치도 로그인도 없고, 기록은 컴퓨터 밖으로 나가지 않습니다.
+            Claude Code에서 사용한 프롬프트부터 작업 내역과 사용량까지, 하루의 AI 코딩 활동을 하나의 리포트로 확인하세요.
           </p>
 
           <CommandCta />

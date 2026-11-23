@@ -54,8 +54,8 @@ export async function GET(req: Request) {
     <div style={{ width: "100%", height: "100%", background: BG, color: FG, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 80 }}>
       <div style={{ display: "flex", fontSize: 40, color: PRIMARY }}>scored</div>
       <div style={{ display: "flex", flexDirection: "column", fontSize: 76, lineHeight: 1.3, letterSpacing: -2 }}>
-        <div>터미널 한 줄이면,</div>
-        <div>내 AI 코딩 성적표가 나온다</div>
+        <div>흩어진 AI 코딩 기록을,</div>
+        <div>한눈에.</div>
       </div>
       <div style={{ display: "flex", fontSize: 32, color: MUTED }}>npx @jong-yeon/scored · 서버 전송 0</div>
     </div>

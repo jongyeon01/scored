@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   openGraph: {
     title: "scored",
-    description: "터미널 한 줄이면, 내 AI 코딩 성적표가 나온다",
+    description: "흩어진 AI 코딩 기록을, 한눈에.", // CPY-LAND-001
     siteName: "scored",
     locale: "ko_KR",
     type: "website",
