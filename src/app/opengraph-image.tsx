@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "scored — 터미널 한 줄이면, 내 AI 코딩 성적표가 나온다";
+export const alt = "scored — 흩어진 AI 코딩 기록을, 한눈에."; // CPY-LAND-001
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -36,8 +36,8 @@ export default function Image() {
         <div style={{ display: "flex", fontSize: 40, color: PRIMARY }}>scored</div>
         {/* satori는 \n을 접는다 — 줄은 요소로 나눈다 */}
         <div style={{ display: "flex", flexDirection: "column", fontSize: 76, lineHeight: 1.3, letterSpacing: -2 }}>
-          <div>터미널 한 줄이면,</div>
-          <div>내 AI 코딩 성적표가 나온다</div>
+          <div>흩어진 AI 코딩 기록을,</div>
+          <div>한눈에.</div>
         </div>
         <div style={{ display: "flex", fontSize: 32, color: MUTED }}>
           npx @jong-yeon/scored · 서버 전송 0
