@@ -56,3 +56,7 @@ next-env.d.ts
 
 # docs
 /docs/
+# 비공개 작업 문서 (2026-11-23 추적 해제)
+/backlog.md
+/TODO.md
+/RUNBOOK.md
